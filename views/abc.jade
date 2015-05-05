@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1.
+        bookmarks
+    ul
+        for doc in docs
+            li
+                a(href="#{doc.burl}" target="_blank")= doc.bname
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                for val in doc.btag
+                    span(style="border: 1px solid rgb(200, 200, 200); padding-left:6px; padding-right:6px")= val
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                br
+                br

@@ -1,0 +1,34 @@
+extends layout
+
+block content
+    html
+        head
+            title Add Bookmarks
+            script( type='text/javascript', src='/javascripts/addbk1.js' )
+            div(class='page-header')
+                h1 Add bookmarks
+                p A single click results in adding the bookmark. Use erase to clear the box.
+        body
+            nav
+                ul(class='pager')
+                    li(class='previous')
+                        a(href='/mybookmarkspage') View my bookmarks
+                    li(class='next')
+                        a(href='/profilepage') Back to home
+            div(style='width: 600px; text align:center; position: absolute; top:220px; left:340px; border-radius:8px;')
+                h2 
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a bookmark:
+                form(id = 'myform', action='/addlink', method='POST', class='form-horizontal')
+                    div(class='form-group')
+                        label(class='col-sm-2 control-label') 
+                            Link
+                        div(class='col-sm-10')
+                            input(type='text', name='link',  id='link', required='required', class='form-control', placeholder='Enter the url here')
+                    div(class='form-group')
+                        label(class='col-sm-2 control-label')
+                            Tags
+                        div(class='col-sm-10')
+                            input(type='text', name='tags', id='tags', class='form-control', placeholder='Enter your tags here (comma seperated)')
+                    div(class='btn-group', style='position:absolute; top:160px; left:106px;')
+                        input(type='submit', value='Add bookmark', class='btn btn-primary pull-left', id='add', style='margin-right:10px')
+                        input(type='reset', value='erase', class='btn btn-primary')

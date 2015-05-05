@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    html
+        head
+            title Profile page
+        body
+            div(class='page-header')
+                h1 Welcome to Bookmarks &nbsp;
+                    small #{user.username}
+            div(class='list-group', style='position:relative; top:10px;')
+                a(href='/mybookmarkspage', class='list-group-item active') 
+                    p(align='center') My Bookmarks
+                a(href='/addbookmarkspage', class='list-group-item') 
+                    p(align='center') Add Bookmarks
+                a(href='/signout', class='list-group-item') 
+                    p(align='center') Signout

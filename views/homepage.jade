@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    html
+        head
+            title Bookmark app
+            div(class='Jumbotron')
+                div(class='page-header')
+                    h1 Bookmarks 
+                        small App
+                    p This is a simple bookmarking app built using NodeJs, ExpressJs and Passport.
+        body
+            div(class='list-group', style='position:relative; top: 10px;')
+                a(href='/loginpage', class='list-group-item active')
+                    p(align='center') Login
+                a(href='/signuppage', class='list-group-item')
+                    p(align='center') Signup

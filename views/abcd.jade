@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    html
+        head
+            title Login
+        body
+            h2 Login page
+            form(action='/login', method='POST')
+                |   User ID: 
+                input(align="center" type='text', name='username', required='required')
+                br
+                | Password: 
+                input(align="center" type='password', name='password', required='required')
+                br
+                input(type='submit', value='Go')

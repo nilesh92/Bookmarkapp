@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    html
+        head
+            title Bookmarked pages-
+        body
+            nav
+                ul(class='pager')
+                    li(class='previous')
+                        a(href='/addbookmarkspage') Add a bookmark
+                    li(class='next')
+                        a(href='/profilepage') Back to home
+            div(class='panel panel-primary')
+                div(class='panel-heading') My Bookmarks
+                table(class='table table-striped')
+                    thead
+                        tr
+                            th(width='640', style='text-align:left;') Bookmarked links
+                            th(width='640', style='text-align:left; position:absolute; left:672px;') Tags
+                    tbody
+                        for doc in docs
+                            tr
+                                td(width='640', style='padding-right:4px')
+                                    a(href="#{doc.burl}" target="_blank")= doc.bname
+                                td(width='640')
+                                    for val in doc.btag
+                                        span(style="border: 1px solid green; border-radius: 5px; padding-left:6px; padding-right:6px", class='label label-info')=val
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
